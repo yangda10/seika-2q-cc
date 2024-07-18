@@ -1,16 +1,14 @@
 # seika-2q-cc
 
-**aaa** aa
+**開発の仕方** 
 
-## aaa
-aaaa
+## 開発の仕方
+以下のコマンドを実行してください
 
----
-- a
-- a
-- a
-
-> aa
 ```javascript
-console.log('Hello world');
+npm install
+```
+
+```javascript
+npm run dev
 ```
