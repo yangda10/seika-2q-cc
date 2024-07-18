@@ -6,6 +6,7 @@
 ---
 -a
 -a
->aaa
-```console.log('Hello World!);
+> aa
+```javascript
+console.log('Hello World!);
 ```
