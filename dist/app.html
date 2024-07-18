@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <style>
+      div{
+        text-align: center;
+      }
+      #menu{
+        position: fixed;
+        z-index: 70;
+        height: 40px;
+        width: 100%;
+      }
+      #menu li{
+        display: inline-block;
+        margin: 7px;
+        background: rgba(255,255,255, 50%);
+        border-radius: 10px;
+      }
+      #menu li a{
+        text-decoration: none;
+        color: #FE2EF7;
+        padding: 9px 15px;
+        display: block;
+      }
+      #menu li:hover{
+        background-color: lightblue;
+      }
+      .fp-section:nth-child(2){
+        background-image: linear-gradient(45deg, red, blue);
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: orangered;
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <li data-menuanchor="1"><a href="#1">first</a></li>
+    <li data-menuanchor="2"><a href="#2">second</a></li>
+    <li data-menuanchor="3"><a href="#3">third</a></li>
+    <li data-menuanchor="4"><a href="#4">fourth</a></li>
+  </ul>
+  <div id="fullpage">
+    <div class="section">
+      <h1>Welcome to this homepage!</h1>
+    </div>
+    <div class="section">
+      <form>
+        <a>Name</a><input type="text"><br>
+        <a>Age</a><input type="text"><br>
+        <button type="button" onclick="submitForm()">submit</button>
+      </form>
+    </div>
+    <div class="section">
+      <div class="slide">
+        <div id="box-container"></div>
+      </div>
+      <div class="slide">slide 2</div></div>
+    <div class="section">
+    </div>
+    </div>
+</div> 
+</div>
+<script>
+  function submitForm() {
+    window.alert('Success');
+  }
+  
+  window.onload = function() {
+    let boxContainer = document.getElementById('box-container');
+    for (let i = 1; i < 10; i++){
+      let box = document.createElement('div');
+      box.className = 'box';
+      boxContainer.appendChild(box);
+    }
+  }
+</script>
+  <script src="vendors/easings.min.js"></script>
+  <script type="text/javascript" src="fullpage.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
