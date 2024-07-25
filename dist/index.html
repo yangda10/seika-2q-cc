@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      form {
+        display: grid;
+      }
+      button {
+        margin-top: 25px;
+        width: 10%;
+        background-color: blue;
+        color: aliceblue;
+      }
+      input {
+        margin-top: 20px;
+        margin-left: 1px;
+      }
+      span {
+        width: 50%;
+      }
+      .swiper {
+        width: 500px;
+        height: 280px;
+        margin-bottom: 50px;
+      }
+      .active-index {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      .swiper-container {
+        display: flex;
+        justify-content: space-around;
+      }
+      .swiper-slide{
+        text-align: center;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+  <h2>Swiper</h2>
+  <div class="swiper-container">
+    <!-- First Swiper container -->
+    <div class="swiper swiper1">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Second Swiper container -->
+    <div class="swiper swiper2">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/sandwich_tamago.png" width="200" height="200"> </div>
+          <div class="swiper-slide"><img src="/food_hamburger.png" width="200" height="200"></div>
+          <div class="swiper-slide"><img src="/food_bread.png" width="200" height="200"></div>
+          <div class="swiper-slide"><img src="/food_hotdog.png" width="200" height="200"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
+      
+    </div>
+  </div>
+
+  <div id="active-index" class="active-index">スライド0を表示しています</div>
+  <div id="food">たまごサンド</div>
+
+  <hr/>
+  <h2>Justvalidate</h2>
+  <form id="basic_form">
+      <label>
+        <span>名前</span>
+        <input id="basic_name" name="name" type="text" placeholder="Enter your name" /></label>
+      <label>
+        <span>メールアドレス</span>
+        <input id="basic_email" name="mail" type="text" placeholder="Enter your email" /></label>
+      <label>
+        <span>パスワード</span>
+        <input id="basic_password" name="password" type="text" placeholder="Enter your password" /></label>
+      <label>
+        <span>年齢</span>
+        <input id="basic_age" name="age" type="text" placeholder="Enter your age" /></label>
+      <label>
+        <span>住所</span>
+        <input id="basic_adress" name="adress" type="text" placeholder="Enter your adress" /></label>
+      <button type="submit">送信</button>
+  </form>
+  <script src="main.js"></script>
+</body>
+</html>

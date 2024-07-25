@@ -31,12 +31,23 @@
       .fp-section:nth-child(2){
         background-image: linear-gradient(45deg, red, blue);
       }
+      .form {
+        font-size: x-large;
+        color: aliceblue;
+      }
+      .form a {
+        margin-right: 10px;
+      }
       .box {
         width: 200px;
         height: 200px;
         background-color: orangered;
         display: inline-block;
         margin: 10px;
+      }
+      .box:hover {
+        background-color: yellow;
+        transform: translate(0, -10%);
       }
     </style>
     <title>Document</title>
@@ -53,18 +64,24 @@
       <h1>Welcome to this homepage!</h1>
     </div>
     <div class="section">
-      <form>
-        <a>Name</a><input type="text"><br>
+      <form class="form">
+        <a>Name</a><input type="text" id="name" onchange="printName()"><br>
         <a>Age</a><input type="text"><br>
-        <button type="button" onclick="submitForm()">submit</button>
+        <button type="button" onclick="submitForm()">送信</button>
       </form>
     </div>
     <div class="section">
       <div class="slide">
+        <h2>click!</h2>
+        <canvas id="canvas" width="1000px" height="600px"></canvas>
+      </div>
+      <div class="slide">
+        <h2>hover!</h2>
         <div id="box-container"></div>
       </div>
-      <div class="slide">slide 2</div></div>
+    </div>
     <div class="section">
+      <h1 id="s4"></h1>
     </div>
     </div>
 </div> 
@@ -82,9 +99,23 @@
       boxContainer.appendChild(box);
     }
   }
+
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.onclick = function (event) {
+    ctx.fillStyle = 'orangered';
+    ctx.fillRect(event.offsetX-50, event.offsetY-50, 100, 100);
+  }
+  
+  function printName() {
+    const name = document.getElementById('name').value;
+    const s4 = document.getElementById('s4');
+    s4.innerText = name + 'さんありがとうございます！';
+  }
+
 </script>
   <script src="vendors/easings.min.js"></script>
   <script type="text/javascript" src="fullpage.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js"></script> 
 </body>
 </html>
